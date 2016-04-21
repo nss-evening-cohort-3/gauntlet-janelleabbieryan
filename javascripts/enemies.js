@@ -1,6 +1,7 @@
 "use strict";
+var Gauntlet = (function(OrigGauntlet){
 
-Gauntlet.Combatants.Orc = function() {
+OrigGauntlet.Combatants.Orc = function() {
   this.health = this.health + 20;
   this.species = "Orc";
   this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
@@ -13,11 +14,12 @@ Gauntlet.Combatants.Orc = function() {
     var randomClass = this.allowedClasses[random];
 
     // Composes the corresponding player class into the player object
-    this.class = new Gauntlet.GuildHall[randomClass]();
+    this.class = new OrigGauntlet.GuildHall[randomClass]();
     return this.class;
 
   };
 };
 
-Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
-
+OrigGauntlet.Combatants.Orc.prototype = new OrigGauntlet.Combatants.Monster();
+return OrigGauntlet;
+})(Gauntlet || {});
