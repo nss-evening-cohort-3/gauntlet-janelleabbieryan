@@ -1,3 +1,5 @@
+"use strict";
+
 /*
   TODO: Modularize this code with IIFE or Browserify
  */
@@ -16,7 +18,11 @@ Gauntlet.GuildHall.PlayerClass = function() {
 
   this.toString = function() {
     return this.name;
+<<<<<<< HEAD
   }
+=======
+  };
+>>>>>>> aa39b1a61048926e004ae19bd7ff277211ac3c35
 };
 
 /*
@@ -69,7 +75,11 @@ Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
     MAGICAL CLASSES
       - Shaman
       - Wizard
+<<<<<<< HEAD
       - Conujurer
+=======
+      - Conjurer
+>>>>>>> aa39b1a61048926e004ae19bd7ff277211ac3c35
       - Sorcerer
  */
 Gauntlet.GuildHall.Mage = function() {
