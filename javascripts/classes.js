@@ -72,11 +72,7 @@ Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
     MAGICAL CLASSES
       - Shaman
       - Wizard
-<<<<<<< HEAD
-      - Conujurer
-=======
       - Conjurer
->>>>>>> aa39b1a61048926e004ae19bd7ff277211ac3c35
       - Sorcerer
  */
 Gauntlet.GuildHall.Mage = function() {
@@ -131,3 +127,32 @@ Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
       - Assassin
  */
 
+Gauntlet.GuildHall.Shadow = function() {
+  this.name = "Shadow";
+  this.magical = false;
+  this.healthBonus = this.healthBonus + 10;
+  this.strengthBonus = this.strengthBonus - 20;
+  this.intelligenceBonus = this.intelligenceBonus + 20;
+};
+Gauntlet.GuildHall.Shadow.prototype = new Gauntlet.GuildHall.PlayerClass();
+
+Gauntlet.GuildHall.Thief = function() {
+  this.name = "Thief";
+  this.healthBonus = this.healthBonus + 5;
+  this.strengthBonus = this.strengthBonus + 15;
+};
+Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Shadow();
+
+Gauntlet.GuildHall.Ninja = function() {
+  this.name = "Ninja";
+  this.healthBonus = this.healthBonus + 10;
+  this.strengthBonus = this.strengthBonus + 10;
+};
+Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Shadow();
+
+Gauntlet.GuildHall.Assassin = function() {
+  this.name = "Assassin";
+  this.healthBonus = this.healthBonus + 5;
+  this.strengthBonus = this.strengthBonus + 20;
+};
+Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Shadow();
