@@ -8,6 +8,7 @@ var Gauntlet = (function(OrigGauntlet){
   warrior.setWeapon(new OrigGauntlet.Armory.WarAxe());
   warrior.generateClass();  // This will be used for "Surprise me" option
   console.log(warrior.toString());
+  console.log("warrior", warrior);
 
   var orc = new OrigGauntlet.Combatants.Orc();
   orc.generateClass();

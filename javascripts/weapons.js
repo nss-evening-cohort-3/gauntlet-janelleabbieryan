@@ -18,14 +18,14 @@ var Gauntlet = (function(OrigGauntlet){
   };
   OrigGauntlet.Armory.Dagger.prototype = new OrigGauntlet.Armory.Weapon();
 
-  var BroadSword = function() {
+  OrigGauntlet.Armory.BroadSword = function() {
     this.name = "broad sword";
     this.damage = 14;
     this.hands = 2;
   };
   OrigGauntlet.Armory.BroadSword.prototype = new OrigGauntlet.Armory.Weapon();
 
-  var WarAxe = function() {
+  OrigGauntlet.Armory.WarAxe = function() {
     this.name = "war axe";
     this.damage = 18;
     this.hands = 2;
