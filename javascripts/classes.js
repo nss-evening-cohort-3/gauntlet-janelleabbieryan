@@ -18,11 +18,8 @@ Gauntlet.GuildHall.PlayerClass = function() {
 
   this.toString = function() {
     return this.name;
-<<<<<<< HEAD
-  }
-=======
+
   };
->>>>>>> aa39b1a61048926e004ae19bd7ff277211ac3c35
 };
 
 /*
