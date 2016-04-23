@@ -1,5 +1,5 @@
 "use strict";
-
+var playerName = ""
 var Gauntlet = (function(OrigGauntlet){
   /*
     Test code to generate a human player and an orc player
@@ -63,7 +63,7 @@ var Gauntlet = (function(OrigGauntlet){
 
     // when player clicks "choose weapon", player name is set to text input value
     $("#name_selected").click(function(){
-      var playerName = $("#player-name").val();
+      playerName = $("#player-name").val();
       console.log("name", playerName ); // 'PlayerObject.setName(playerName);'
     })
   });
