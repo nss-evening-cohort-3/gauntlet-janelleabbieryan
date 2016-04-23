@@ -31,5 +31,48 @@ var Gauntlet = (function(OrigGauntlet){
     this.hands = 2;
   };
   OrigGauntlet.Armory.WarAxe.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Mace = function() {
+    this.name = "mace";
+    this.damage = 10;
+    this.hands = 1;
+  };
+  OrigGauntlet.Armory.Mace.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Staff = function() {
+    this.name = "staff";
+    this.damage = 10;
+    this.hands = 2;
+  };
+  OrigGauntlet.Armory.Staff.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Book = function() {
+    this.name = "spell book";
+    this.damage = 3;
+    this.hands = 1;
+  };
+  OrigGauntlet.Armory.Book.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Wand = function() {
+    this.name = "wand";
+    this.damage = 1;
+    this.hands = 1;
+  };
+  OrigGauntlet.Armory.Wand.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Katana = function() {
+    this.name = "katana";
+    this.damage = 13;
+    this.hands = 2;
+  };
+  OrigGauntlet.Armory.Katana.prototype = new OrigGauntlet.Armory.Weapon();
+
+    OrigGauntlet.Armory.Longbow = function() {
+    this.name = "longbow";
+    this.damage = 12;
+    this.hands = 2;
+  };
+  OrigGauntlet.Armory.Longbow.prototype = new OrigGauntlet.Armory.Weapon();
+  
   return OrigGauntlet;
 })(Gauntlet || {});
