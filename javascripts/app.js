@@ -109,7 +109,7 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
-    $("#attack_button").click(function(){
+    $("#attackBtn").click(function(){
       PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
       Enemy.health = Enemy.health - PlayerCharacter.weapon.damage;
       $(".battleDiv").html(`<p>You hit the enemy for ${PlayerCharacter.weapon.damage}! The enemy hit you for ${Enemy.weapon.damage}!</p> 
