@@ -4,17 +4,17 @@ var Gauntlet = (function(OrigGauntlet){
   /*
     Test code to generate a human player and an orc player
    */
-  var warrior = new OrigGauntlet.Combatants.Human();
-  warrior.setWeapon(new OrigGauntlet.Armory.WarAxe());
-  warrior.setName("Susan");
-  warrior.generateClass();  // This will be used for "Surprise me" option
-  console.log(warrior.toString());
-  console.log("warrior", warrior);
+  // var warrior = new OrigGauntlet.Combatants.Human();
+  // warrior.setWeapon(new OrigGauntlet.Armory.WarAxe());
+  // warrior.setName("Susan");
+  // warrior.generateClass();  // This will be used for "Surprise me" option
+  // console.log(warrior.toString());
+  // console.log("warrior", warrior);
 
-  var orc = new OrigGauntlet.Combatants.Orc();
-  orc.generateClass();
-  orc.setWeapon(new OrigGauntlet.Armory.BroadSword());
-  console.log(orc.toString());
+  // var orc = new OrigGauntlet.Combatants.Orc();
+  // orc.generateClass();
+  // orc.setWeapon(new OrigGauntlet.Armory.BroadSword());
+  // console.log(orc.toString());
 
   /*
     Test code to generate a spell
@@ -24,6 +24,11 @@ var Gauntlet = (function(OrigGauntlet){
 
 
   $(document).ready(function() {
+    // generate player object
+    var warrior = new OrigGauntlet.Combatants.Human();
+
+
+
     /*
       Show the initial view that accepts player name
      */
@@ -65,7 +70,11 @@ var Gauntlet = (function(OrigGauntlet){
     $("#name_selected").click(function(){
       playerName = $("#player-name").val();
       console.log("name", playerName ); // 'PlayerObject.setName(playerName);'
-    })
+    });
+
+    //when player clicks a class, store the value and set the class on the warrior object
+    $("")
+
   });
 return OrigGauntlet;
 })(Gauntlet || {});
