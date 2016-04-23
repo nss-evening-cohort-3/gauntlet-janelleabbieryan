@@ -26,7 +26,6 @@ var Gauntlet = (function(OrigGauntlet){
   $(document).ready(function() {
     // generate player object
     var PlayerCharacter = new OrigGauntlet.Combatants.Human();
-    PlayerCharacter.setWeapon(new OrigGauntlet.Armory.Wand());
 
     /*
       Show the initial view that accepts player name
@@ -46,11 +45,10 @@ var Gauntlet = (function(OrigGauntlet){
           moveAlong = ($("#player-name").val() !== "");
           break;
         case "card--weapon":
-          moveAlong = ($("#player-name").val() !== "");
+          moveAlong = (PlayerCharacter.class !== null);
           break;
         case "card--battleground":
-          moveAlong = ($("#player-name").val() !== "");
-          console.log("battleground");
+          moveAlong = (PlayerCharacter.weapon !== null);
           break;
       }
 
