@@ -25,8 +25,8 @@ var Gauntlet = (function(OrigGauntlet){
 
   $(document).ready(function() {
     // generate player object
-    var Player = new OrigGauntlet.Combatants.Human();
-    Player.setWeapon(new OrigGauntlet.Armory.Wand());
+    var PlayerCharacter = new OrigGauntlet.Combatants.Human();
+    PlayerCharacter.setWeapon(new OrigGauntlet.Armory.Wand());
 
     /*
       Show the initial view that accepts player name
@@ -50,6 +50,7 @@ var Gauntlet = (function(OrigGauntlet){
           break;
         case "card--battleground":
           moveAlong = ($("#player-name").val() !== "");
+          console.log("battleground");
           break;
       }
 
@@ -71,22 +72,31 @@ var Gauntlet = (function(OrigGauntlet){
     // when player clicks "choose weapon", player name is set to text input value
     $("#name_selected").click(function(){
       playerName = $("#player-name").val();
-      Player.setName(playerName); // 'PlayerObject.setName(playerName);'
+      PlayerCharacter.setName(playerName); // 'PlayerObject.setName(playerName);'
     });
 
     //when player clicks a class, store the value and set the class on the player object
     $(".class__link").click(function(e){
+      if ($(this).attr('player') === "surprise") {
+        PlayerCharacter.generateClass();
+        console.log(PlayerCharacter.toString());
+      } else {
       var chosenClass = "new OrigGauntlet.GuildHall."+$(this).attr('player')+"()";
-      Player.setClass(eval(chosenClass));
+      PlayerCharacter.setClass(eval(chosenClass));
       console.log(chosenClass);
+      }
     });
 
     //when player clicks a weapon, store the value and set the weapon on the player object
     $(".weapon__link").click(function(e){
-      var chosenWeapon = "new OrigGauntlet.Armory."+$(this).attr('player')+"()";
-      Player.setWeapon(eval(chosenWeapon));
-      console.log(chosenWeapon);
-      console.log("player", Player );
+      if ($(this).attr('player') === "surprise") {
+        PlayerCharacter.generateWeapon();
+        console.log(PlayerCharacter.toString());
+      } else {
+        var chosenWeapon = "new OrigGauntlet.Armory."+$(this).attr('player')+"()";
+        PlayerCharacter.setWeapon(eval(chosenWeapon));
+        console.log("player", PlayerCharacter );
+      }
     });
 
   });
