@@ -92,11 +92,9 @@ var Gauntlet = (function(OrigGauntlet){
     $(".class__link").click(function(e){
       if ($(this).attr('player') === "surprise") {
         PlayerCharacter.generateClass();
-        console.log(PlayerCharacter.toString());
       } else {
-      var chosenClass = "new OrigGauntlet.GuildHall."+$(this).attr('player')+"()";
-      PlayerCharacter.setClass(eval(chosenClass));
-      console.log(chosenClass);
+      var chosenClass = $(this).attr('player');
+      PlayerCharacter.setClass(new OrigGauntlet.GuildHall[chosenClass]());
       }
     });
 
@@ -104,10 +102,9 @@ var Gauntlet = (function(OrigGauntlet){
     $(".weapon__link").click(function(e){
       if ($(this).attr('player') === "surprise") {
         PlayerCharacter.generateWeapon();
-        console.log(PlayerCharacter.toString());
       } else {
-        var chosenWeapon = "new OrigGauntlet.Armory."+$(this).attr('player')+"()";
-        PlayerCharacter.setWeapon(eval(chosenWeapon));
+        var chosenWeapon = $(this).attr('player');
+        PlayerCharacter.setWeapon(new OrigGauntlet.Armory[chosenWeapon]());
         console.log("player", PlayerCharacter );
       }
     });
