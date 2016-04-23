@@ -44,6 +44,9 @@ var Gauntlet = (function(OrigGauntlet){
         case "card--weapon":
           moveAlong = ($("#player-name").val() !== "");
           break;
+        case "card--battleground":
+          moveAlong = ($("#player-name").val() !== "");
+          break;
       }
 
       if (moveAlong) {
