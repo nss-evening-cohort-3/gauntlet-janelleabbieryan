@@ -58,6 +58,17 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
+
+    /*
+      Populate cards with stats
+    */
+    $("#defeatBtn").click(function(){
+      $(".playerStats").html(PlayerCharacter.toString());
+      $(".playerName").html(PlayerCharacter.playerName);
+      // $(".enemyStats").html();
+    });
+
+
     /*
       When the back button clicked, move back a view
      */
@@ -96,6 +107,8 @@ var Gauntlet = (function(OrigGauntlet){
         console.log("player", PlayerCharacter );
       }
     });
+
+
 
   });
 return OrigGauntlet;

@@ -24,17 +24,17 @@ var Gauntlet = (function(OrigGauntlet){
     this.intelligence = 90;
 
     this.toString = function() {
-      var output = [this.playerName,
-        ": a ",
+      var output = [
+        "A ",
         this.skinColor,
-        " skinned ",
+        "-skinned ",
         this.species,
         " ",
         this.class,
         " with ",
         this.health,
-        " health. ",
-        (this.class.magical) ? "Able to cast " : " Wielding a ",
+        " health, ",
+        (this.class.magical) ? "Able to cast " : " wielding a ",
         this.weapon.toString(),
         "!"
       ].join("");
