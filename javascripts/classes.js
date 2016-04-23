@@ -18,7 +18,6 @@ var Gauntlet = (function(OrigGauntlet){
 
     this.toString = function() {
       return this.name;
-
     };
   };
 
@@ -158,4 +157,4 @@ var Gauntlet = (function(OrigGauntlet){
   OrigGauntlet.GuildHall.Assassin.prototype = new OrigGauntlet.GuildHall.Shadow();
 
   return OrigGauntlet;
-})(Gauntlet || {});
+}) (Gauntlet || {});

@@ -1,5 +1,5 @@
 "use strict";
-var playerName = ""
+var playerName = "";
 var Gauntlet = (function(OrigGauntlet){
   /*
     Test code to generate a human player and an orc player
@@ -25,9 +25,8 @@ var Gauntlet = (function(OrigGauntlet){
 
   $(document).ready(function() {
     // generate player object
-    var warrior = new OrigGauntlet.Combatants.Human();
-
-
+    var Player = new OrigGauntlet.Combatants.Human();
+    Player.setWeapon(new OrigGauntlet.Armory.Wand());
 
     /*
       Show the initial view that accepts player name
@@ -47,6 +46,9 @@ var Gauntlet = (function(OrigGauntlet){
           moveAlong = ($("#player-name").val() !== "");
           break;
         case "card--weapon":
+          moveAlong = ($("#player-name").val() !== "");
+          break;
+        case "card--battleground":
           moveAlong = ($("#player-name").val() !== "");
           break;
       }
@@ -69,11 +71,23 @@ var Gauntlet = (function(OrigGauntlet){
     // when player clicks "choose weapon", player name is set to text input value
     $("#name_selected").click(function(){
       playerName = $("#player-name").val();
-      console.log("name", playerName ); // 'PlayerObject.setName(playerName);'
+      Player.setName(playerName); // 'PlayerObject.setName(playerName);'
     });
 
-    //when player clicks a class, store the value and set the class on the warrior object
-    $("")
+    //when player clicks a class, store the value and set the class on the player object
+    $(".class__link").click(function(e){
+      var chosenClass = "new OrigGauntlet.GuildHall."+$(this).attr('player')+"()";
+      Player.setClass(eval(chosenClass));
+      console.log(chosenClass);
+    });
+
+    //when player clicks a weapon, store the value and set the weapon on the player object
+    $(".weapon__link").click(function(e){
+      var chosenWeapon = "new OrigGauntlet.Armory."+$(this).attr('player')+"()";
+      Player.setWeapon(eval(chosenWeapon));
+      console.log(chosenWeapon);
+      console.log("player", Player );
+    });
 
   });
 return OrigGauntlet;
