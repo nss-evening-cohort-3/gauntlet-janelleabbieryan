@@ -11,8 +11,9 @@ var Gauntlet = (function(OrigGauntlet){
   // console.log(warrior.toString());
   // console.log("warrior", warrior);
 
-  // var orc = new OrigGauntlet.Combatants.Orc();
-  // orc.generateClass();
+  var orc = new OrigGauntlet.Combatants.Orc();
+  orc.generateClass();
+  orc.generateWeapon();
   // orc.setWeapon(new OrigGauntlet.Armory.BroadSword());
   // console.log(orc.toString());
 
@@ -68,7 +69,7 @@ var Gauntlet = (function(OrigGauntlet){
     $("#defeatBtn").click(function(){
       $(".playerStats").html(PlayerCharacter.toString());
       $(".playerName").html(PlayerCharacter.playerName);
-      // $(".enemyStats").html();
+      $(".enemyStats").html(orc.toString());
     });
 
 
@@ -121,10 +122,10 @@ var Gauntlet = (function(OrigGauntlet){
 
 
       if (PlayerCharacter.health <= 0) {
-        alert("You is dead now.")
+        alert("You is dead now.");
       } else if (Enemy.health <= 0) {
-        alert("Way to go, Badass.")
-      };
+        alert("Way to go, Badass.");
+      }
 
     });
 
