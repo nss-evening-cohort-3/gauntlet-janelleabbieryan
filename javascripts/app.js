@@ -118,8 +118,10 @@ var Gauntlet = (function(OrigGauntlet){
 
       if (PlayerCharacter.health <= 0) {
         alert("You is dead now.");
+        $("#attackBtn").prop("disabled", true);
       } else if (Enemy.health <= 0) {
         alert("Way to go, Badass.");
+        $("#attackBtn").prop("disabled", true);
       }
 
     });
