@@ -27,6 +27,9 @@ var Gauntlet = (function(OrigGauntlet){
     // generate player object
     var PlayerCharacter = new OrigGauntlet.Combatants.Human();
 
+    var Enemy = new OrigGauntlet.Combatants.Orc();
+    Enemy.generateClass();
+    Enemy.generateWeapon();
     /*
       Show the initial view that accepts player name
      */
@@ -108,7 +111,22 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
+    $("#attack_button").click(function(){
+      PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
+      Enemy.health = Enemy.health - PlayerCharacter.weapon.damage;
+      console.log(`You hit the enemy for ${PlayerCharacter.weapon.damage}!`);
+      console.log(`The enemy hit you for ${Enemy.weapon.damage}!`);
+      console.log(`Your health is now: ${PlayerCharacter.health} His health is now: ${Enemy.health}`);
 
+
+
+      if (PlayerCharacter.health <= 0) {
+        alert("You is dead now.")
+      } else if (Enemy.health <= 0) {
+        alert("Way to go, Badass.")
+      };
+
+    });
 
   });
 return OrigGauntlet;
