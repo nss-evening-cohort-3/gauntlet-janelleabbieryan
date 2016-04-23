@@ -1,11 +1,12 @@
 "use strict";
-
+var playerName = ""
 var Gauntlet = (function(OrigGauntlet){
   /*
     Test code to generate a human player and an orc player
    */
   var warrior = new OrigGauntlet.Combatants.Human();
   warrior.setWeapon(new OrigGauntlet.Armory.WarAxe());
+  warrior.setName("Susan");
   warrior.generateClass();  // This will be used for "Surprise me" option
   console.log(warrior.toString());
   console.log("warrior", warrior);
@@ -60,6 +61,11 @@ var Gauntlet = (function(OrigGauntlet){
       $("." + previousCard).show();
     });
 
+    // when player clicks "choose weapon", player name is set to text input value
+    $("#name_selected").click(function(){
+      playerName = $("#player-name").val();
+      console.log("name", playerName ); // 'PlayerObject.setName(playerName);'
+    })
   });
 return OrigGauntlet;
 })(Gauntlet || {});
