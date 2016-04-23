@@ -54,6 +54,21 @@ var Gauntlet = (function(OrigGauntlet){
     this.playerName = name;
   };
 
+//generate random weapon
+  OrigGauntlet.Combatants.Player.prototype.generateWeapon = function() {
+    // Get a random index from the allowed classes array
+    var random = Math.round(Math.random() * (this.allowedWeapons.length - 1));
+
+    // Get the string at the index
+    var randomWeapon = this.allowedWeapons[random];
+
+    // Composes the corresponding player class into the player object
+    this.weapon = new OrigGauntlet.Armory[randomWeapon]();
+
+    return this.weapon;
+  };
+
+//generate random class
   OrigGauntlet.Combatants.Player.prototype.generateClass = function() {
     // Get a random index from the allowed classes array
     var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
@@ -84,6 +99,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.skinColor = this.skinColors[randomSkin];
 
     this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk", "Thief", "Ninja", "Assassin", "Shaman", "Wizard", "Conjurer", "Sorcerer"];
+    this.allowedWeapons = ["BroadSword", "WarAxe", "Mace", "Wand"];
   };
   OrigGauntlet.Combatants.Human.prototype = new OrigGauntlet.Combatants.Player();
 
