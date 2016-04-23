@@ -26,7 +26,6 @@ var Gauntlet = (function(OrigGauntlet){
   $(document).ready(function() {
     // generate player object
     var PlayerCharacter = new OrigGauntlet.Combatants.Human();
-    PlayerCharacter.setWeapon(new OrigGauntlet.Armory.Wand());
 
     var Enemy = new OrigGauntlet.Combatants.Orc();
     Enemy.generateClass();
@@ -49,11 +48,10 @@ var Gauntlet = (function(OrigGauntlet){
           moveAlong = ($("#player-name").val() !== "");
           break;
         case "card--weapon":
-          moveAlong = ($("#player-name").val() !== "");
+          moveAlong = (PlayerCharacter.class !== null);
           break;
         case "card--battleground":
-          moveAlong = ($("#player-name").val() !== "");
-          console.log("battleground");
+          moveAlong = (PlayerCharacter.weapon !== null);
           break;
       }
 
@@ -62,6 +60,17 @@ var Gauntlet = (function(OrigGauntlet){
         $("." + nextCard).show();
       }
     });
+
+
+    /*
+      Populate cards with stats
+    */
+    $("#defeatBtn").click(function(){
+      $(".playerStats").html(PlayerCharacter.toString());
+      $(".playerName").html(PlayerCharacter.playerName);
+      // $(".enemyStats").html();
+    });
+
 
     /*
       When the back button clicked, move back a view
