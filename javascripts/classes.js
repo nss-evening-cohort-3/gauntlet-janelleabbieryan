@@ -39,6 +39,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.name = "Warrior";
     this.healthBonus = this.healthBonus + 25;
     this.strengthBonus = this.strengthBonus + 30;
+  };
   OrigGauntlet.GuildHall.Warrior.prototype = new OrigGauntlet.GuildHall.Fighter();
 
 
@@ -156,4 +157,4 @@ var Gauntlet = (function(OrigGauntlet){
   OrigGauntlet.GuildHall.Assassin.prototype = new OrigGauntlet.GuildHall.Shadow();
 
   return OrigGauntlet;
-})(Gauntlet || {});
+}) (Gauntlet || {});

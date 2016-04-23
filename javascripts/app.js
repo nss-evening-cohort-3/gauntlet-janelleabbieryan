@@ -1,5 +1,5 @@
 "use strict";
-var playerName = ""
+var playerName = "";
 var Gauntlet = (function(OrigGauntlet){
   /*
     Test code to generate a human player and an orc player
@@ -65,7 +65,7 @@ var Gauntlet = (function(OrigGauntlet){
     $("#name_selected").click(function(){
       playerName = $("#player-name").val();
       console.log("name", playerName ); // 'PlayerObject.setName(playerName);'
-    })
+    });
   });
 return OrigGauntlet;
 })(Gauntlet || {});
