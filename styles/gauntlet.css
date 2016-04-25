@@ -5,6 +5,7 @@ body {
   font-size: 3em;
 }
 
+
 .field {
   margin: 20px 0 0 0;
 }
@@ -26,6 +27,7 @@ body {
 }
 
 .card__prompt {
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.1em;
   font-weight: bold;
   text-align: center;
@@ -102,4 +104,8 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+.panel-heading {
+  font-family: 'Press Start 2P', cursive;
 }
