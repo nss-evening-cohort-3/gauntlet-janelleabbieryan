@@ -111,7 +111,9 @@ var Gauntlet = (function(OrigGauntlet){
 
     $("#attackBtn").click(function(){
       PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
+      PlayerCharacter.health = Math.max(0, PlayerCharacter.health);
       Enemy.health = Enemy.health - PlayerCharacter.weapon.damage;
+      Enemy.health = Math.max(0, Enemy.health);
       $(".battleDiv").html(`<p>You hit the enemy for ${PlayerCharacter.weapon.damage}! The enemy hit you for ${Enemy.weapon.damage}!</p> 
           <p>Your health is now: ${PlayerCharacter.health}</p><p>His health is now: ${Enemy.health}</p>`);
 
