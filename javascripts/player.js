@@ -14,6 +14,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.species = null;
     this.class = null;
     this.weapon = null;
+    this.spell = new OrigGauntlet.SpellBook.Sphere();
 
     this.playerName = name || "unknown adventurer";
     this.health = Math.floor(Math.random() * 40 + 50);
@@ -34,8 +35,7 @@ var Gauntlet = (function(OrigGauntlet){
         " with ",
         this.health,
         " health, ",
-        (this.class.magical) ? "Able to cast " : " wielding a ",
-        this.weapon,
+        (this.class.magical) ? "Able to cast "+this.spell : " wielding a "+this.weapon,
         "!"
       ].join("");
       return output;
