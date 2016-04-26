@@ -117,6 +117,7 @@ input[type="text"] {
 .panel {
   box-shadow: 2px 2px 5px #eee;
   background-color: #000;
+  min-height: 255px;
 }
 
 .playerStats, .enemyStats {
