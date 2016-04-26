@@ -21,8 +21,6 @@ var Gauntlet = (function(OrigGauntlet){
     Test code to generate a spell
    */
   var spell = new OrigGauntlet.SpellBook.Sphere();
-  console.log("spell: ", spell.toString());
-
 
   $(document).ready(function() {
     // generate player object
@@ -69,7 +67,7 @@ var Gauntlet = (function(OrigGauntlet){
     $("#defeatBtn").click(function(){
       $(".playerStats").html(PlayerCharacter.toString());
       $(".playerName").html(PlayerCharacter.playerName);
-      $(".enemyStats").html(orc.toString());
+      $(".enemyStats").html(Enemy.toString());
     });
 
 
@@ -105,14 +103,28 @@ var Gauntlet = (function(OrigGauntlet){
       } else {
         var chosenWeapon = $(this).attr('player');
         PlayerCharacter.setWeapon(new OrigGauntlet.Armory[chosenWeapon]());
-        console.log("player", PlayerCharacter );
       }
     });
 
     $("#attackBtn").click(function(){
-      PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
-      Enemy.health = Enemy.health - PlayerCharacter.weapon.damage;
-      $(".battleDiv").html(`<p>You hit the enemy for ${PlayerCharacter.weapon.damage}! The enemy hit you for ${Enemy.weapon.damage}!</p> 
+      var playerDamage = 0;
+      var enemyDamage = 0;
+
+      if (PlayerCharacter.class.magical) {
+        playerDamage = PlayerCharacter.spell.damage;
+      } else {
+        playerDamage = PlayerCharacter.weapon.damage;
+      };
+
+      if (Enemy.class.magical) {
+        enemyDamage = Enemy.spell.damage;
+      } else {
+        enemyDamage = Enemy.weapon.damage;
+      }
+
+      PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
+      Enemy.health = Enemy.health - playerDamage ;
+      $(".battleDiv").html(`<p>You hit the enemy for ${playerDamage}! The enemy hit you for ${enemyDamage}!</p> 
           <p>Your health is now: ${PlayerCharacter.health}</p><p>His health is now: ${Enemy.health}</p>`);
 
 
