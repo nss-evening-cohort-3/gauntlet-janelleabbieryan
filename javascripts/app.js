@@ -105,6 +105,8 @@ var Gauntlet = (function(OrigGauntlet){
     });
 
     $(".battleDiv").hide();
+    $(".overlayWin").hide();
+    $(".overlayLose").hide();
 
     $("#attackBtn").click(function(){
       $(".battleDiv").show();
@@ -133,11 +135,11 @@ var Gauntlet = (function(OrigGauntlet){
 
 
       if (PlayerCharacter.health <= 0) {
-        alert("You is dead now.");
         $("#attackBtn").prop("disabled", true);
+        $(".overlayWin").show()
       } else if (Enemy.health <= 0) {
-        alert("Way to go, Badass.");
         $("#attackBtn").prop("disabled", true);
+        $(".overlayLose").show();
       }
 
     });
