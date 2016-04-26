@@ -14,7 +14,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.name = "";
     this.damage = 0;
 
-    this.damageTypes = ["lightning", "fire", "water", "earth", "mysticism"];
+    this.damageTypes = ["despair", "jQuery", "IIFE", "prototypes", "CSS", "promises"];
     this.type = "";
 
     this.toString = function() {
