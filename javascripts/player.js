@@ -35,7 +35,7 @@ var Gauntlet = (function(OrigGauntlet){
         " with ",
         this.health,
         " health, ",
-        (this.class.magical) ? `Able to cast ${this.spell},` : "",
+        (this.class.magical) ? `able to cast ${this.spell},` : "",
         " wielding a ",
         this.weapon,
         "!"

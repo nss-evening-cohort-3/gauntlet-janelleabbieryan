@@ -118,6 +118,7 @@ input[type="text"] {
   box-shadow: 2px 2px 5px #eee;
   background-color: #000;
   min-height: 255px;
+  font-size: .9em;
 }
 
 .playerStats, .enemyStats {
