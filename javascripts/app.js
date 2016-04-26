@@ -122,8 +122,14 @@ var Gauntlet = (function(OrigGauntlet){
         enemyDamage = Enemy.weapon.damage;
       }
 
+      // PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
+      // Enemy.health = Enemy.health - playerDamage ;
+      // $(".battleDiv").html(`<p>You hit the enemy for ${playerDamage}! The enemy hit you for ${enemyDamage}!</p> 
+
       PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
-      Enemy.health = Enemy.health - playerDamage ;
+      PlayerCharacter.health = Math.max(0, PlayerCharacter.health);
+      Enemy.health = Enemy.health - playerDamage;
+      Enemy.health = Math.max(0, Enemy.health);
       $(".battleDiv").html(`<p>You hit the enemy for ${playerDamage}! The enemy hit you for ${enemyDamage}!</p> 
           <p>Your health is now: ${PlayerCharacter.health}</p><p>His health is now: ${Enemy.health}</p>`);
 
