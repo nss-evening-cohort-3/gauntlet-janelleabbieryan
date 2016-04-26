@@ -12,7 +12,6 @@ var Gauntlet = (function(OrigGauntlet){
       var random = Math.round(Math.random() * (this.allowedNames.length - 1));
 
       this.name = this.allowedNames[random]
-      console.log("name", this.name );
     };
     this.generateClass = function() {
       // Get a random index from the allowed classes array

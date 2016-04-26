@@ -1,22 +1,6 @@
 "use strict";
 var playerName = "";
 var Gauntlet = (function(OrigGauntlet){
-  /*
-    Test code to generate a human player and an orc player
-   */
-  // var warrior = new OrigGauntlet.Combatants.Human();
-  // warrior.setWeapon(new OrigGauntlet.Armory.WarAxe());
-  // warrior.setName("Susan");
-  // warrior.generateClass();  // This will be used for "Surprise me" option
-  // console.log(warrior.toString());
-  // console.log("warrior", warrior);
-  // orc.setWeapon(new OrigGauntlet.Armory.BroadSword());
-  // console.log(orc.toString());
-
-  /*
-    Test code to generate a spell
-   */
-  var spell = new OrigGauntlet.SpellBook.Sphere();
 
   $(document).ready(function() {
     // generate player object
@@ -81,7 +65,7 @@ var Gauntlet = (function(OrigGauntlet){
     // when player clicks "choose weapon", player name is set to text input value
     $("#name_selected").click(function(){
       playerName = $("#player-name").val();
-      PlayerCharacter.setName(playerName); // 'PlayerObject.setName(playerName);'
+      PlayerCharacter.setName(playerName);
     });
 
     //when player clicks a class, store the value and set the class on the player object
