@@ -109,7 +109,10 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
+    $(".battleDiv").hide();
+
     $("#attackBtn").click(function(){
+      $(".battleDiv").show();
       PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
       PlayerCharacter.health = Math.max(0, PlayerCharacter.health);
       Enemy.health = Enemy.health - PlayerCharacter.weapon.damage;
