@@ -10,10 +10,6 @@ var Gauntlet = (function(OrigGauntlet){
   // warrior.generateClass();  // This will be used for "Surprise me" option
   // console.log(warrior.toString());
   // console.log("warrior", warrior);
-
-  var orc = new OrigGauntlet.Combatants.Orc();
-  orc.generateClass();
-  orc.generateWeapon();
   // orc.setWeapon(new OrigGauntlet.Armory.BroadSword());
   // console.log(orc.toString());
 
@@ -29,6 +25,7 @@ var Gauntlet = (function(OrigGauntlet){
     var Enemy = new OrigGauntlet.Combatants.Orc();
     Enemy.generateClass();
     Enemy.generateWeapon();
+    Enemy.pickName();
     /*
       Show the initial view that accepts player name
      */
@@ -68,6 +65,7 @@ var Gauntlet = (function(OrigGauntlet){
       $(".playerStats").html(PlayerCharacter.toString());
       $(".playerName").html(PlayerCharacter.playerName);
       $(".enemyStats").html(Enemy.toString());
+      $(".enemyName").html(Enemy.name);
     });
 
 
