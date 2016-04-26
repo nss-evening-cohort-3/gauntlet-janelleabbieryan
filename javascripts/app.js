@@ -106,7 +106,11 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
+    $(".battleDiv").hide();
+
     $("#attackBtn").click(function(){
+      $(".battleDiv").show();
+      PlayerCharacter.health = PlayerCharacter.health - Enemy.weapon.damage;
       var playerDamage = 0;
       var enemyDamage = 0;
 
@@ -121,10 +125,6 @@ var Gauntlet = (function(OrigGauntlet){
       } else {
         enemyDamage = Enemy.weapon.damage;
       }
-
-      // PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
-      // Enemy.health = Enemy.health - playerDamage ;
-      // $(".battleDiv").html(`<p>You hit the enemy for ${playerDamage}! The enemy hit you for ${enemyDamage}!</p> 
 
       PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
       PlayerCharacter.health = Math.max(0, PlayerCharacter.health);

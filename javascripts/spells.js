@@ -19,7 +19,6 @@ var Gauntlet = (function(OrigGauntlet){
 
     this.toString = function() {
       return this.name + " of " + this.type + " for " + this.damage + " damage";
-
     };
   };
 

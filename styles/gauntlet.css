@@ -3,6 +3,10 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  background-color: #000;
+  color: #eee;
+  background-image: url("http://static1.gamespot.com/uploads/original/1552/15524586/2926443-0003.jpg");
+
 }
 
 
@@ -15,9 +19,12 @@ body {
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
+  box-shadow: 2px 2px 5px #eee;
 }
 
-
+input[type="text"] {
+  background-color: #000;
+}
 
 /*
   Section styles
@@ -106,6 +113,22 @@ body {
   border-radius: 0 5px 5px 0;
 }
 
+
+.panel {
+  box-shadow: 2px 2px 5px #eee;
+  background-color: #000;
+}
+
+.playerStats, .enemyStats {
+  color: #eee;
+}
+
 .panel-heading {
   font-family: 'Press Start 2P', cursive;
+}
+
+.battleDiv {
+  box-shadow: 2px 2px 5px #eee;
+  background-color: #000;
+  border: 1px solid #eee;
 }
