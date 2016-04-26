@@ -61,9 +61,10 @@ input[type="text"] {
   margin: 10px;
   font-size: 18px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   padding: 10px 5px;
   min-width: 260px;
+  font-family: 'VT323', sans-serif;
 }
 
 .btn--orange {
@@ -121,14 +122,19 @@ input[type="text"] {
 
 .playerStats, .enemyStats {
   color: #eee;
+  font-family: 'VT323', sans-serif;
+
 }
 
 .panel-heading {
   font-family: 'Press Start 2P', cursive;
 }
 
+
 .battleDiv {
   box-shadow: 2px 2px 5px #eee;
   background-color: #000;
   border: 1px solid #eee;
+  font-family: 'VT323', sans-serif;
+
 }
