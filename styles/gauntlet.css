@@ -138,5 +138,27 @@ input[type="text"] {
   background-color: #000;
   border: 1px solid #eee;
   font-family: 'VT323', sans-serif;
+}
+
+.overlayLose, .overlayWin {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 8em;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+.overlayLose {
+  color: darkred;
+  text-shadow: 2px 2px 5px #eee;
+}
+
+.overlayWin {
+  color:lightgreen;
+  text-shadow: 2px 2px 5px #eee;
 
 }
