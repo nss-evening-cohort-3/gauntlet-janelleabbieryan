@@ -7,7 +7,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.species = "Orc";
     this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
     this.allowedWeapons = ["WarAxe", "Wand", "Staff"];
-    this.allowedNames = ["Joe", "Zoe", "Steve", "Greg"];
+    this.allowedNames = ["Joe", "Zoe", "Steve", "Greg", "Andrew Chalkley", "Nick Pettit"];
     this.pickName = function() {
       var random = Math.round(Math.random() * (this.allowedNames.length - 1));
 

@@ -128,8 +128,8 @@ var Gauntlet = (function(OrigGauntlet){
       PlayerCharacter.health = Math.max(0, PlayerCharacter.health);
       Enemy.health = Enemy.health - playerDamage;
       Enemy.health = Math.max(0, Enemy.health);
-      $(".battleDiv").html(`<p>You hit the enemy for ${playerDamage}! The enemy hit you for ${enemyDamage}!</p> 
-          <p>Your health is now: ${PlayerCharacter.health}</p><p>His health is now: ${Enemy.health}</p>`);
+      $(".battleDiv").html(`<p>You hit ${Enemy.name} for ${playerDamage}! ${Enemy.name} hit you for ${enemyDamage}!</p> 
+          <p>Your health is now: ${PlayerCharacter.health}</p><p>${Enemy.name}'s health is now: ${Enemy.health}</p>`);
 
 
       if (PlayerCharacter.health <= 0) {
