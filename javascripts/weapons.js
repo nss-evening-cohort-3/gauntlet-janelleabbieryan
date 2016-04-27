@@ -1,5 +1,8 @@
 "use strict";
+
 var Gauntlet = (function(OrigGauntlet){
+
+  // Our weapon selection
   OrigGauntlet.Armory = {};
   OrigGauntlet.Armory.Weapon = function() {
     this.name = "bare hands";
@@ -73,6 +76,6 @@ var Gauntlet = (function(OrigGauntlet){
     this.hands = 2;
   };
   OrigGauntlet.Armory.Longbow.prototype = new OrigGauntlet.Armory.Weapon();
-  
+
   return OrigGauntlet;
 })(Gauntlet || {});
