@@ -19,7 +19,7 @@ body {
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
-  box-shadow: 2px 2px 5px #eee;
+  box-shadow: 3px 3px 10px darkgrey;
 }
 
 input[type="text"] {
