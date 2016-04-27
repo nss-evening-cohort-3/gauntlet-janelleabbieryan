@@ -1,6 +1,7 @@
 "use strict";
 var Gauntlet = (function(OrigGauntlet){
 
+// Build for the opponent
   OrigGauntlet.Combatants.Orc = function() {
     this.name = null;
     this.health = this.health + 20;
@@ -8,6 +9,8 @@ var Gauntlet = (function(OrigGauntlet){
     this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
     this.allowedWeapons = ["WarAxe", "Wand", "Staff"];
     this.allowedNames = ["Joe", "Zoe", "Steve", "Greg", "Andrew Chalkley", "Nick Pettit"];
+
+    // Enemy name picker
     this.pickName = function() {
       var random = Math.round(Math.random() * (this.allowedNames.length - 1));
 

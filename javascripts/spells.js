@@ -1,11 +1,7 @@
 "use strict";
 
-/*
-  TODO: Modularize this code with IIFE or Browserify
- */
 var Gauntlet = (function(OrigGauntlet){
   OrigGauntlet.SpellBook = {};
-
 
   /*
     Base spell function that defines name, damage, damage type

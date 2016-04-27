@@ -88,6 +88,8 @@ var Gauntlet = (function(OrigGauntlet){
       }
     });
 
+
+    // Battleground and attack button
     $(".battleDiv").hide();
     $(".overlayWin").hide();
     $(".overlayLose").hide();
@@ -98,6 +100,7 @@ var Gauntlet = (function(OrigGauntlet){
       var playerDamage = 0;
       var enemyDamage = 0;
 
+      // Determines casting ability and switches to magic damage if needed
       if (PlayerCharacter.class.magical) {
         playerDamage = PlayerCharacter.spell.damage;
       } else {
@@ -110,11 +113,13 @@ var Gauntlet = (function(OrigGauntlet){
         enemyDamage = Enemy.weapon.damage;
       }
 
+
+      // Attack functions
       PlayerCharacter.health = PlayerCharacter.health - enemyDamage;
       PlayerCharacter.health = Math.max(0, PlayerCharacter.health);
       Enemy.health = Enemy.health - playerDamage;
       Enemy.health = Math.max(0, Enemy.health);
-      $(".battleDiv").html(`<p>You hit ${Enemy.name} for ${playerDamage}! ${Enemy.name} hit you for ${enemyDamage}!</p> 
+      $(".battleDiv").html(`<p>You hit ${Enemy.name} for ${playerDamage}! ${Enemy.name} hit you for ${enemyDamage}!</p>
           <p>Your health is now: ${PlayerCharacter.health}</p><p>${Enemy.name}'s health is now: ${Enemy.health}</p>`);
 
 
