@@ -120,11 +120,12 @@ var Gauntlet = (function(OrigGauntlet){
 
       if (PlayerCharacter.health <= 0) {
         $("#attackBtn").prop("disabled", true);
-        $(".overlayWin").show()
+        $(".overlayLose").show()
       } else if (Enemy.health <= 0) {
         $("#attackBtn").prop("disabled", true);
-        $(".overlayLose").show();
+        $(".overlayWin").show();
       }
+
 
     });
 
