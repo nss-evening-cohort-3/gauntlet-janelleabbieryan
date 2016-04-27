@@ -19,7 +19,7 @@ var Gauntlet = (function(OrigGauntlet){
     this.playerName = name || "unknown adventurer";
     this.health = Math.floor(Math.random() * 40 + 50);
     this.limbs = ["head", "neck", "arm", "leg", "torso"];
-    this.skinColor = "gray";
+    this.skinColor = "grumpy";
     this.skinColors = [this.skinColor];
     this.strength = 90;
     this.intelligence = 90;
@@ -28,7 +28,7 @@ var Gauntlet = (function(OrigGauntlet){
       var output = [
         "A ",
         this.skinColor,
-        "-skinned ",
+        " looking ",
         this.species,
         " ",
         this.class,
@@ -87,16 +87,16 @@ var Gauntlet = (function(OrigGauntlet){
   };
 
   /*
-    Define the base properties for a human in a 
+    Define the base properties for a human in a
     constructor function.
    */
   OrigGauntlet.Combatants.Human = function() {
     var randomSkin;
 
-    this.species = "Human";
+    this.species = "Student";
     this.intelligence = this.intelligence + 20;
 
-    this.skinColors.push("brown", "red", "white", "disease");
+    this.skinColors.push("pale", "nervous", "tired", "caffeinated");
     randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
     this.skinColor = this.skinColors[randomSkin];
 
@@ -107,7 +107,7 @@ var Gauntlet = (function(OrigGauntlet){
 
 
   /*
-    Define the base properties for a monster in a 
+    Define the base properties for a monster in a
     constructor function.
    */
   OrigGauntlet.Combatants.Monster = function() {
